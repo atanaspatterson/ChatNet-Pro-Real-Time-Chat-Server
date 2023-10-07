@@ -1,0 +1,11 @@
+PROG = project05
+OBJS = project05.o stdin.o presence.o poll.o errors.o chat.o
+
+%.o: %.c
+	gcc -c -g -o $@ $<
+
+$(PROG): $(OBJS)
+	gcc -g -o $@ $^
+
+clean:
+	rm -rf $(PROG) $(OBJS)
